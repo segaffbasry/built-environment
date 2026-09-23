@@ -97,19 +97,10 @@ body {
   animation-play-state: paused;
 }
 
-/* Airflow dash animation used in the heat-exchanger diagram */
-@keyframes flow {
-  to {
-    stroke-dashoffset: -48;
-  }
-}
-.flow {
-  stroke-dasharray: 6 18;
-  animation: flow 1.4s linear infinite;
-}
-.flow-rev {
-  stroke-dasharray: 6 18;
-  animation: flow 1.4s linear infinite reverse;
+/* Keep keyboard navigation as clear as pointer interactions. */
+:focus-visible {
+  outline: 2px solid var(--green-deep);
+  outline-offset: 5px;
 }
 
 @media (prefers-reduced-motion: reduce) {

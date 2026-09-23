@@ -7,62 +7,67 @@ import { EASE, Magnetic, Reveal, SplitWords } from "./motion";
 import { ArrowUpRight, Eyebrow, Pill } from "./ui";
 
 const units = [
-  { src: "/images/unit-ventaxia.png", alt: "Vent-Axia MVHR unit", rotate: -4 },
-  { src: "/images/unit-zehnder-1.png", alt: "Zehnder MVHR unit", rotate: 0 },
-  { src: "/images/unit-zehnder-2.png", alt: "Zehnder ComfoAir MVHR unit", rotate: 4 },
+  { src: "/images/unit-ventaxia.png", alt: "Vent-Axia MVHR unit", label: "Vent-Axia" },
+  { src: "/images/unit-zehnder-1.png", alt: "Zehnder MVHR unit", label: "Zehnder" },
+  { src: "/images/unit-zehnder-2.png", alt: "Zehnder ComfoAir MVHR unit", label: "Zehnder ComfoAir" },
 ];
 
 export default function Servicing() {
   return (
     <section id="servicing" className="relative scroll-mt-24 py-20 sm:py-28">
       <div className="mx-auto max-w-[1320px] px-5 sm:px-8">
-        <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
+        <div className="flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-end">
           <div>
             <Reveal>
               <Eyebrow>Service Enquiry</Eyebrow>
             </Reveal>
-            <h2 className="display mt-6 text-[clamp(3.25rem,10vw,9.5rem)] leading-[0.9] uppercase">
+            <h2 className="display mt-6 text-[clamp(3rem,8.5vw,7.5rem)] leading-[0.9] uppercase">
               <SplitWords text={servicing.title[0]} className="block" />
               <SplitWords text={servicing.title[1]} delay={0.1} className="block text-green-deep" />
             </h2>
           </div>
 
-          <Reveal delay={0.2} className="flex max-w-[360px] flex-col gap-5">
-            <div className="flex items-center gap-4 rounded-[20px] bg-paper p-3 pr-5 ring-1 ring-ink/5">
-              <div className="relative h-14 w-[104px] shrink-0 overflow-hidden rounded-xl bg-paper">
-                <Image src="/images/niceic.png" alt="NICEIC Domestic Installer" fill sizes="104px" className="object-contain" />
-              </div>
-              <span className="text-sm leading-snug font-semibold">{servicing.accreditation}</span>
+          <Reveal delay={0.2} className="flex items-center gap-5 mix-blend-multiply lg:mb-2 lg:max-w-[280px]">
+            <div className="relative h-16 w-[116px] shrink-0 mix-blend-multiply">
+              <Image src="/images/niceic.png" alt="NICEIC" fill sizes="116px" className="object-contain" />
+            </div>
+            <div className="border-l border-ink/15 pl-5">
+              <p className="text-[11px] font-semibold tracking-[0.16em] text-muted uppercase">Accreditation</p>
+              <p className="mt-1 text-sm leading-snug font-semibold">{servicing.accreditation}</p>
             </div>
           </Reveal>
         </div>
 
         {/* unit gallery */}
-        <div className="mt-16 grid grid-cols-3 gap-3 sm:mt-20 sm:gap-6">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-3 sm:gap-5">
           {units.map((u, i) => (
             <motion.figure
               key={u.src}
-              initial={{ opacity: 0, y: 60, rotate: u.rotate * 1.6 }}
-              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -10% 0px" }}
               transition={{ duration: 1.2, delay: i * 0.1, ease: EASE }}
-              className="group relative aspect-square overflow-hidden rounded-[20px] bg-paper p-2 ring-1 ring-ink/5 sm:rounded-[28px] sm:p-3"
+              className="group"
             >
-              <div className="relative h-full w-full overflow-hidden rounded-[14px] sm:rounded-[20px]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[16px] bg-green-soft">
                 <Image
                   src={u.src}
                   alt={u.alt}
                   fill
-                  sizes="(min-width: 1320px) 420px, 33vw"
-                  className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-out)] group-hover:scale-[1.08] group-hover:rotate-[1.5deg]"
+                  sizes="(min-width: 1320px) 405px, (min-width: 640px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-out)] group-hover:scale-[1.04]"
                 />
               </div>
+              <figcaption className="mt-4 flex items-center justify-between border-b border-ink/15 pb-4">
+                <span className="text-sm font-semibold">{u.label}</span>
+                <span className="text-[11px] tracking-[0.12em] text-muted uppercase">MVHR system</span>
+              </figcaption>
             </motion.figure>
           ))}
         </div>
 
         {/* service list */}
-        <div className="mt-16 grid gap-12 sm:mt-24 lg:grid-cols-12">
+        <div className="mt-12 grid gap-10 sm:mt-16 lg:grid-cols-12">
           <ul className="border-t border-ink/10 lg:col-span-8">
             {servicing.items.map((item, i) => (
               <motion.li
@@ -115,7 +120,7 @@ export default function Servicing() {
 
         {/* service partners */}
         <Reveal className="mt-20 sm:mt-28">
-          <div className="flex flex-col gap-6 rounded-[28px] bg-paper p-6 ring-1 ring-ink/5 sm:flex-row sm:items-center sm:gap-10 sm:p-8">
+          <div className="flex flex-col gap-6 border-y border-ink/15 py-7 sm:flex-row sm:items-center sm:gap-10">
             <span className="eyebrow shrink-0 text-muted">{servicing.partners}</span>
             <div className="marquee relative flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
               <div className="marquee-track flex w-max items-center gap-16">
@@ -126,7 +131,7 @@ export default function Servicing() {
                       alt={k === 0 ? "Zehnder, Greenwood, Mitsubishi Electric, Vent-Axia, Systemair, Vortice, Titon and Nuaire" : ""}
                       fill
                       sizes="425px"
-                      className="object-contain"
+                      className="object-contain mix-blend-multiply"
                     />
                   </div>
                 ))}
