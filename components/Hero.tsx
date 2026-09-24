@@ -65,7 +65,7 @@ export default function Hero() {
             &amp; MEV
           </motion.div>
 
-          <h1 className="display text-[clamp(2.75rem,7.6vw,6.75rem)] text-balance text-ink">
+          <h1 className="display text-[clamp(2.25rem,5.6vw,5rem)] text-balance text-ink">
             <SplitWords text="Welcome to" immediate delay={0.25} className="block text-ink/45" />
             <SplitWords text="Built Environment Technology Ltd" immediate delay={0.4} className="block" />
           </h1>
@@ -74,7 +74,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.1, delay: 0.9, ease: EASE }}
-            className="mx-auto mt-8 max-w-[640px] text-lg leading-relaxed text-muted sm:text-xl"
+            className="mx-auto mt-8 max-w-[640px] text-base leading-relaxed text-muted sm:text-lg"
           >
             {hero.intro}
           </motion.p>
@@ -140,7 +140,7 @@ export default function Hero() {
               <div aria-hidden className="absolute -right-20 -top-20 size-64 rounded-full bg-green/25 blur-3xl" />
               <span className="eyebrow relative text-green">Heat recovery</span>
               <div className="relative">
-                <Counter to={95} suffix="%" className="display block text-[clamp(3.5rem,9vw,8.5rem)] text-green" />
+                <Counter to={95} suffix="%" className="display block text-[clamp(3rem,7vw,6.5rem)] text-green" />
                 <p className="mt-3 max-w-[18ch] text-sm leading-snug text-paper/70 sm:text-base">recover as much as 95% of heat from the ventilated rooms</p>
               </div>
             </motion.div>

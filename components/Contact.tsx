@@ -38,11 +38,11 @@ export default function Contact() {
               </Reveal>
               <h2 className="display mt-6">
                 <a href={contact.phoneHref} className="group block w-fit">
-                  <SplitWords text={contact.phone} className="block text-[clamp(2.9rem,7.4vw,7.5rem)] whitespace-nowrap transition-colors duration-500 group-hover:text-green" />
+                  <SplitWords text={contact.phone} className="block text-[clamp(2.25rem,5.5vw,5.25rem)] whitespace-nowrap transition-colors duration-500 group-hover:text-green" />
                 </a>
                 <a
                   href={contact.emailHref}
-                  className="group relative mt-4 inline-block text-[clamp(1.2rem,2.4vw,2rem)] font-medium tracking-[-0.02em] text-paper/70 transition-colors hover:text-paper"
+                  className="group relative mt-4 inline-block text-[clamp(1rem,1.8vw,1.5rem)] font-medium tracking-[-0.02em] text-paper/70 transition-colors hover:text-paper"
                 >
                   {contact.email}
                   <span className="absolute -bottom-1 left-0 h-[2px] w-full origin-right scale-x-0 bg-green transition-transform duration-500 ease-[var(--ease-out)] group-hover:origin-left group-hover:scale-x-100" />

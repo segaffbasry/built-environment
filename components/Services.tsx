@@ -19,10 +19,10 @@ export default function Services() {
             <SplitWords
               as="h2"
               text="Every project is different"
-              className="display mt-6 block text-[clamp(2.4rem,5vw,4.5rem)]"
+              className="display mt-6 block text-[clamp(2rem,3.8vw,3.25rem)]"
             />
             <Reveal delay={0.15}>
-              <p className="mt-8 max-w-[480px] text-lg leading-relaxed text-muted sm:text-xl">{services.lead}</p>
+              <p className="mt-8 max-w-[480px] text-base leading-relaxed text-muted sm:text-lg">{services.lead}</p>
             </Reveal>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Services() {
                     </span>
                   </div>
                   <div className="mt-8 flex items-end justify-between gap-4">
-                    <p className="text-[1.3rem] leading-snug font-semibold tracking-[-0.015em] text-ink sm:text-[1.4rem]">{label}</p>
+                    <p className="text-[1.0625rem] leading-snug font-semibold tracking-[-0.015em] text-ink sm:text-[1.125rem]">{label}</p>
                     <ArrowUpRight className="size-5 shrink-0 -translate-x-2 translate-y-2 opacity-0 transition-all duration-500 ease-[var(--ease-out)] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                   </div>
                 </div>

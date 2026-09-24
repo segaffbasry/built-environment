@@ -21,7 +21,7 @@ export default function Servicing() {
             <Reveal>
               <Eyebrow>Service Enquiry</Eyebrow>
             </Reveal>
-            <h2 className="display mt-6 text-[clamp(3rem,8.5vw,7.5rem)] leading-[0.9] uppercase">
+            <h2 className="display mt-6 text-[clamp(2.5rem,6vw,5.25rem)] leading-[0.9] uppercase">
               <SplitWords text={servicing.title[0]} className="block" />
               <SplitWords text={servicing.title[1]} delay={0.1} className="block text-green-deep" />
             </h2>
@@ -86,7 +86,7 @@ export default function Servicing() {
                   <span className="w-8 text-sm font-semibold tabular-nums text-muted transition-colors group-hover:text-ink/70">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex-1 text-[1.25rem] leading-snug font-semibold tracking-[-0.02em] sm:text-[1.9rem]">{item}</span>
+                  <span className="flex-1 text-[1.0625rem] leading-snug font-semibold tracking-[-0.02em] sm:text-[1.375rem]">{item}</span>
                   <ArrowUpRight className="mr-5 size-6 shrink-0 -rotate-45 opacity-0 transition-all duration-700 ease-[var(--ease-out)] group-hover:rotate-0 group-hover:opacity-100" />
                 </div>
               </motion.li>
@@ -96,7 +96,7 @@ export default function Servicing() {
           <Reveal delay={0.15} className="lg:col-span-4">
             <div className="grain relative overflow-hidden rounded-[28px] bg-green p-7 text-ink sm:p-9 lg:sticky lg:top-32">
               <div aria-hidden className="absolute -right-16 -bottom-16 size-56 rounded-full bg-paper/30 blur-2xl" />
-              <p className="display relative text-[2rem] leading-[1.05] sm:text-[2.5rem]">{servicing.cta}</p>
+              <p className="display relative text-[1.625rem] leading-[1.15] sm:text-[1.875rem]">{servicing.cta}</p>
               <div className="relative mt-10 flex flex-col gap-3 text-[15px] font-semibold">
                 <a href={contact.phoneHref} className="group flex items-center justify-between border-b border-ink/15 pb-3">
                   {contact.phone}

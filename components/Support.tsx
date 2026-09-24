@@ -57,12 +57,12 @@ export default function Support() {
 
           <ScrollText
             text={support.ongoing}
-            className="display mt-10 max-w-[1100px] text-[clamp(2rem,4.6vw,4.25rem)] leading-[1.06]"
+            className="display mt-10 max-w-[1100px] text-[clamp(1.625rem,3.4vw,3rem)] leading-[1.06]"
           />
 
           <div className="mt-20 grid gap-10 border-t border-paper/10 pt-12 sm:mt-28 lg:grid-cols-12">
             <Reveal className="lg:col-span-6">
-              <p className="text-lg leading-relaxed text-paper/70 sm:text-xl">{support.compliance}</p>
+              <p className="text-base leading-relaxed text-paper/70 sm:text-lg">{support.compliance}</p>
             </Reveal>
             <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-5 lg:col-start-8">
               {[
@@ -78,7 +78,7 @@ export default function Support() {
                   className="group relative overflow-hidden rounded-[22px] bg-paper/[0.06] p-5 ring-1 ring-paper/10 transition-colors duration-500 hover:bg-green hover:text-ink sm:p-6"
                 >
                   <CheckIcon className="size-5 text-green transition-colors duration-500 group-hover:text-ink" />
-                  <span className="display mt-8 block text-4xl sm:text-5xl">{b.big}</span>
+                  <span className="display mt-8 block text-3xl sm:text-4xl">{b.big}</span>
                   <span className="mt-2 block text-sm text-paper/60 transition-colors duration-500 group-hover:text-ink/70">{b.small}</span>
                 </motion.div>
               ))}

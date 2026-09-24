@@ -28,7 +28,7 @@ function Benefits() {
           <span className="relative z-10 grid size-12 shrink-0 place-items-center rounded-full bg-cream ring-1 ring-ink/10 transition-all duration-500 ease-[var(--ease-out)] group-hover:scale-110 group-hover:bg-green group-hover:ring-green">
             <span className="text-base font-semibold tabular-nums">{i + 1}</span>
           </span>
-          <p className="pt-2 text-[1.2rem] leading-snug font-medium tracking-[-0.01em] text-ink-2 transition-colors duration-500 group-hover:text-ink sm:text-[1.5rem]">
+          <p className="pt-2 text-[1.0625rem] leading-snug font-medium tracking-[-0.01em] text-ink-2 transition-colors duration-500 group-hover:text-ink sm:text-[1.125rem]">
             {b}
           </p>
         </motion.li>
@@ -48,7 +48,7 @@ export default function Mvhr() {
               <Reveal>
                 <Eyebrow>MVHR</Eyebrow>
               </Reveal>
-              <SplitWords as="h2" text={mvhr.title} className="display mt-6 block text-[clamp(2.3rem,4.6vw,4.25rem)]" stagger={0.04} />
+              <SplitWords as="h2" text={mvhr.title} className="display mt-6 block text-[clamp(2rem,3.4vw,3.125rem)]" stagger={0.04} />
               <Reveal delay={0.2}>
                 <div className="group relative mt-10 hidden aspect-[5/4] max-w-[440px] overflow-hidden rounded-[28px] bg-paper lg:block">
                   <Image
@@ -72,13 +72,13 @@ export default function Mvhr() {
           <Reveal className="lg:col-span-4">
             <p className="eyebrow text-green-deep">Heat recovery</p>
             <p className="mt-6 text-sm text-muted">Recover as much as</p>
-            <Counter to={95} suffix="%" className="display mt-2 block text-[clamp(5rem,10vw,8rem)] text-green-deep" />
+            <Counter to={95} suffix="%" className="display mt-2 block text-[clamp(4rem,7.5vw,6rem)] text-green-deep" />
             <p className="mt-3 text-sm text-muted">of heat from ventilated rooms</p>
           </Reveal>
           <div className="lg:col-span-8 lg:border-l lg:border-ink/15 lg:pl-12">
             <Reveal>
-              <h3 className="display text-3xl sm:text-4xl">Fresh air. Recovered warmth.</h3>
-              <p className="mt-6 max-w-[65ch] text-lg leading-relaxed text-ink-2">{mvhr.exchange}</p>
+              <h3 className="display text-2xl sm:text-3xl">Fresh air. Recovered warmth.</h3>
+              <p className="mt-6 max-w-[65ch] text-base leading-relaxed text-ink-2">{mvhr.exchange}</p>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 max-w-[70ch] text-base leading-relaxed text-muted">{mvhr.siting}</p>
@@ -102,8 +102,8 @@ export default function Mvhr() {
                 className={`absolute -right-24 -bottom-24 -z-10 size-72 rounded-full blur-2xl transition-transform duration-[1.2s] ease-[var(--ease-out)] group-hover:scale-150 ${i === 0 ? "bg-green/30" : "bg-paper/40"}`}
               />
               <span className={`text-sm font-semibold tabular-nums ${i === 0 ? "text-green" : "text-ink/60"}`}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="display mt-8 text-[clamp(2rem,3.6vw,3rem)] leading-none sm:mt-10">{a.name}</h3>
-              <p className={`mt-5 max-w-[46ch] text-lg leading-relaxed sm:text-xl ${i === 0 ? "text-paper/70" : "text-ink/75"}`}>
+              <h3 className="display mt-8 text-[clamp(1.625rem,2.7vw,2.25rem)] leading-none sm:mt-10">{a.name}</h3>
+              <p className={`mt-5 max-w-[46ch] text-base leading-relaxed sm:text-lg ${i === 0 ? "text-paper/70" : "text-ink/75"}`}>
                 {a.prefix && <>{a.prefix} </>}
                 <b className={i === 0 ? "text-paper" : "text-ink"}>{a.name}</b> {a.text}
               </p>
