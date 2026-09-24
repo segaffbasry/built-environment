@@ -6,6 +6,17 @@ import { contact, legal, servicing } from "@/lib/content";
 import { EASE, Magnetic, Reveal, SplitWords } from "./motion";
 import { ArrowUpRight, Eyebrow, Pill } from "./ui";
 
+const partners = [
+  { src: "/images/partners/zehnder.png", name: "Zehnder" },
+  { src: "/images/partners/greenwood.png", name: "Greenwood" },
+  { src: "/images/partners/mitsubishi-electric.png", name: "Mitsubishi Electric" },
+  { src: "/images/partners/vent-axia.png", name: "Vent-Axia" },
+  { src: "/images/partners/systemair.png", name: "Systemair" },
+  { src: "/images/partners/vortice.png", name: "Vortice" },
+  { src: "/images/partners/titon.png", name: "Titon" },
+  { src: "/images/partners/nuaire.png", name: "Nuaire" },
+];
+
 const units = [
   { src: "/images/unit-ventaxia.png", alt: "Vent-Axia MVHR unit", label: "Vent-Axia" },
   { src: "/images/unit-zehnder-1.png", alt: "Zehnder MVHR unit", label: "Zehnder" },
@@ -118,35 +129,46 @@ export default function Servicing() {
           </Reveal>
         </div>
 
-        {/* service partners */}
-        <Reveal className="mt-20 sm:mt-28">
-          <div className="flex flex-col gap-6 border-y border-ink/15 py-7 sm:flex-row sm:items-center sm:gap-10">
-            <span className="eyebrow shrink-0 text-muted">{servicing.partners}</span>
-            <div className="marquee relative flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-              <div className="marquee-track flex w-max items-center gap-16">
-                {[0, 1, 2, 3].map((k) => (
-                  <div key={k} className="relative h-16 w-[340px] shrink-0 sm:h-20 sm:w-[425px]" aria-hidden={k > 0}>
+        {/* service partners — each brand as its own logo */}
+        <div className="mt-20 border-t border-ink/15 pt-7 sm:mt-28">
+          <Reveal>
+            <div className="flex items-center justify-between gap-6">
+              <span className="eyebrow text-muted">{servicing.partners}</span>
+              <a
+                href="/images/ventilation-servicing-flyer.png"
+                target="_blank"
+                className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-green-deep"
+              >
+                View flyer
+                <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:rotate-45" />
+              </a>
+            </div>
+          </Reveal>
+
+          <ul className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-8">
+            {partners.map((p, i) => (
+              <motion.li
+                key={p.src}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+                transition={{ duration: 0.8, delay: i * 0.06, ease: EASE }}
+              >
+                <div className="group grid h-20 place-items-center rounded-[16px] bg-paper px-4 ring-1 ring-ink/[0.06] transition-[transform,box-shadow] duration-500 ease-[var(--ease-out)] hover:-translate-y-1 hover:shadow-[0_18px_36px_-22px_rgba(16,20,16,0.45)] hover:ring-green/50 sm:h-24">
+                  <div className="relative h-full w-full py-4">
                     <Image
-                      src="/images/partners.png"
-                      alt={k === 0 ? "Zehnder, Greenwood, Mitsubishi Electric, Vent-Axia, Systemair, Vortice, Titon and Nuaire" : ""}
+                      src={p.src}
+                      alt={p.name}
                       fill
-                      sizes="425px"
-                      className="object-contain mix-blend-multiply"
+                      sizes="160px"
+                      className="object-contain transition-transform duration-500 ease-[var(--ease-out)] group-hover:scale-[1.06]"
                     />
                   </div>
-                ))}
-              </div>
-            </div>
-            <a
-              href="/images/ventilation-servicing-flyer.png"
-              target="_blank"
-              className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-green-deep"
-            >
-              View flyer
-              <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:rotate-45" />
-            </a>
-          </div>
-        </Reveal>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
